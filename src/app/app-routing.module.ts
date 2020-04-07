@@ -8,6 +8,7 @@ import { AccessoriesPageComponent } from './pages/accessories-page/accessories-p
 import { OthersPageComponent } from './pages/others-page/others-page.component';
 import { HomeComponent } from './pages/home/home.component';
 
+
 const routes: Routes = [
   { path: 'tshits',
     component: TshirtsPageComponent
