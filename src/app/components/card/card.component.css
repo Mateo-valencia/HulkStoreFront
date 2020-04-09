@@ -1,9 +1,21 @@
 .example-card {
-    max-width: 400px;
+    max-width: 230px;
+    min-width: 130px;
+    margin: 1% auto;
   }
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  .example-header-image-marvel {
+    background-image: url('../../../assets/marvelIcon.png');
+    background-size: cover;
+  }
+
+  .example-header-image-dc {
+    background-image: url('../../../assets/dcIcon.png');
+    background-size: cover;
+  }
+
+  .example-header-image-others{
+    background-image: url('../../../assets/othersIcon.png');
     background-size: cover;
   }
   

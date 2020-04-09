@@ -1,4 +1,48 @@
-<h1>Tshirt works</h1>
-<div class="container">
-    <app-card></app-card>
+
+<div class="content">
+    <div class="tittle">
+        <h1>
+            <b>Tshirts</b>
+        </h1>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <h2 class="subtittle">
+                <b>Tshirts Marvel</b>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesMarvel">
+                <app-card [reference]="item.reference" [price]="item.price" [size]="item.size" [category]="item.category" [brand]="item.brand"></app-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <h2 class="subtittle">
+                <b>Tshirts Dc</b>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesDc">
+                <app-card [reference]="item.reference" [price]="item.price" [size]="item.size" [category]="item.category" [brand]="item.brand"></app-card>
+            </div> 
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <h2 class="subtittle">
+                <b>Others Tshirts</b>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesOthers">
+                <app-card [reference]="item.reference" [price]="item.price" [size]="item.size" [category]="item.category" [brand]="item.brand"></app-card>
+            </div> 
+        </div>
+    </div>
 </div>
+

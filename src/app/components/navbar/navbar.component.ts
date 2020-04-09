@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { Category } from '../../../interfaces/Category';
+import { Category } from 'src/interfaces/CategoryInterface';
+
 
 @Component({
   selector: 'app-navbar',
