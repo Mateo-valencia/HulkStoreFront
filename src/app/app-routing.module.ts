@@ -6,7 +6,8 @@ import { ComicsPageComponent } from './pages/comics-page/comics-page.component';
 import { ToysPageComponent } from './pages/toys-page/toys-page.component';
 import { AccessoriesPageComponent } from './pages/accessories-page/accessories-page.component';
 import { OthersPageComponent } from './pages/others-page/others-page.component';
-import { HomeComponent } from './pages/home/home.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
+
 
 
 const routes: Routes = [
@@ -24,8 +25,10 @@ const routes: Routes = [
   component: AccessoriesPageComponent},
   { path: 'others',
   component: OthersPageComponent},
+  { path: 'inventory',
+  component: InventoryComponent},
   { path: ' ',
-    component: HomeComponent}
+    component: TshirtsPageComponent}
 ];
 
 @NgModule({

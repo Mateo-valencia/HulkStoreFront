@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Article } from '../interfaces/ArticleInterface';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
+import { Category } from 'src/interfaces/CategoryInterface';
 
 const Urlapi = environment.UrlRest;
 
@@ -18,12 +19,12 @@ export class ArticlesService {
     return this.http.get<T>( query );
   }
 
-  getArticlesList(): Observable<Article[]>{
-    return this.buildURL<Article[]>('/getArticles');
+  getArticlesListByBrand(brand: string, category: string): Observable<Article[]>{
+    return this.buildURL<Article[]>(`/getArticlesByBrand/${ brand }/${ category }`);
   }
 
-  getArticlesListByBrand(brand: string): Observable<Article[]>{
-    return this.buildURL<Article[]>(`/getArticlesMarvel/${ brand }`);
+  getCategoriesList(): Observable<Category[]>{
+    return this.buildURL<Category[]>('/getCategories');
   }
 
 }

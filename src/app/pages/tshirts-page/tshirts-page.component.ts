@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ArticlesService } from '../../../services/articles.service';
 import { Article } from '../../../interfaces/ArticleInterface';
-import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tshirts-page',
@@ -10,7 +9,6 @@ import { timeout } from 'rxjs/operators';
 })
 export class TshirtsPageComponent implements OnInit {
 
-  private articlesObtained: Article[];
   public articlesMarvel: Article[];
   public articlesDc: Article[];
   public articlesOthers: Article[];
@@ -23,18 +21,8 @@ export class TshirtsPageComponent implements OnInit {
     this.getArticlesOthers();
   }
 
-  getArticles() {
-    this.articleService.getArticlesList()
-    .subscribe((data) => {
-      console.log(data);
-      this.articlesObtained = data;
-    },
-    (err) => {console.log(err); }
-    );
-  }
-
   getArticlesMarvel() {
-    this.articleService.getArticlesListByBrand('Marvel')
+    this.articleService.getArticlesListByBrand('Marvel','1')
     .subscribe(
       (dataMarvel) => {
         console.log('Marvel', dataMarvel);
@@ -45,7 +33,7 @@ export class TshirtsPageComponent implements OnInit {
   }
 
   getArticlesDC(){
-    this.articleService.getArticlesListByBrand('DC')
+    this.articleService.getArticlesListByBrand('DC', '1')
     .subscribe(
       (dataDC) => {
         console.log('DC', dataDC);
@@ -56,7 +44,7 @@ export class TshirtsPageComponent implements OnInit {
   }
 
   getArticlesOthers(){
-    this.articleService.getArticlesListByBrand('Other')
+    this.articleService.getArticlesListByBrand('Other', '1')
     .subscribe(
       (dataOthers) => {
         console.log('DC', dataOthers);

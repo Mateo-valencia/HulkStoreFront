@@ -9,17 +9,38 @@
       <mat-card-title>{{brand}}</mat-card-title>
       <mat-card-subtitle>Tshirt</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image  [src]="brand === 'Marvel' ? '../../../assets/TshirtMarvel.jpg' 
-    : brand === 'DC' ? '../../../assets/TshirtDc.jpg' 
-    : '../../../assets/TshirtOthers.jpg'" alt="Photo of a Shiba Inu">
+    <img mat-card-image 
+    [src]="category === 1 ? 
+        brand === 'Marvel' ? '../../../assets/TshirtMarvel.jpg':
+        brand === 'DC' ? '../../../assets/TshirtDc.jpg':
+         '../../../assets/TshirtOthers.jpg':
+     category === 2 ?
+        brand === 'Marvel' ? '../../../assets/GlassesMarvel.jpg':
+        brand === 'DC' ? '../../../assets/GlassesDc.jpg':
+        '../../../assets/GlassesOthers.jpg' :
+     category === 3 ?
+        brand === 'Marvel' ? '../../../assets/ComicsMarvel.jpg':
+        brand === 'DC' ? '../../../assets/ComicsDc.png':
+        '../../../assets/Others.png':
+     category === 4 ?
+        brand === 'Marvel' ? '../../../assets/ToysMarvel.jpg':
+        brand === 'DC' ? '../../../assets/ToysDc.jpg':
+         '../../../assets/Others.png':
+     category === 5 ?
+        brand === 'Marvel' ? '../../../assets/AccessoriesMarvel.jpg':
+        brand === 'DC' ? '../../../assets/AccessoriesDc.jpg':
+         '../../../assets/Others.png':
+     category === 6 ?
+        brand === 'Marvel' ? '../../../assets/Others.png':
+        brand === 'DC' ? '../../../assets/Others.png':
+         '../../../assets/Others.png':
+     'Others.png' "
+    alt="Photo of a Shiba Inu" id="image">
     <mat-card-content>
       <h3>{{reference}}</h3>
       <p>
         {{price}}
       </p>
-      <P>
-        {{size}} 
-      </P>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>

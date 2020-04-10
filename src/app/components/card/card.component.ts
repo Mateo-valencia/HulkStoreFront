@@ -9,9 +9,8 @@ export class CardComponent implements OnInit {
 
   @Input() reference: string;
   @Input() price: string;
-  @Input() size: string;
-  @Input() category: string;
   @Input() brand: string;
+  @Input() category: number;
 
   constructor() { }
 

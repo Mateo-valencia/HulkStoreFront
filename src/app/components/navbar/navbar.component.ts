@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Category } from 'src/interfaces/CategoryInterface';
+import { ArticlesService } from '../../../services/articles.service';
 
 
 @Component({
@@ -10,14 +11,9 @@ import { Category } from 'src/interfaces/CategoryInterface';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
-  categories: Category[] = [{name: 'Tshirts', url: 'tshits', icon: 'loyalty'},
-  {name: 'glasses', url: 'glasses', icon: 'free_breakfast'},
-  {name: 'Comics', url: 'comics', icon: 'bookmarks'},
-  {name: 'Toys', url: 'toys', icon: 'toys'},
-  {name: 'accessories', url: 'accessories', icon: 'loyalty'},
-  {name: 'Others', url: 'others', icon: 'dynamic_feed'}];
+  categories: Category[];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -25,6 +21,17 @@ export class NavbarComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private articlesService: ArticlesService) {}
+
+  ngOnInit(): void {
+    this.articlesService.getCategoriesList()
+    .subscribe(
+      (data) => {
+        console.log('Categories', data);
+        this.categories = data;
+      },
+      (err) => {console.log(err); }
+    );
+  }
 
 }
