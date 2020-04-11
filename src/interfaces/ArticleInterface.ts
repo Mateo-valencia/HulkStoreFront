@@ -1,8 +1,13 @@
 export interface Article {
-    id: number;
+    idArticle: number;
+    descriptions: [];
     reference: string;
     price: string;
-    size: string;
-    category: string;
     brand: string;
+}
+
+export interface ArticlePost{
+    'reference': string;
+    'price': string;
+    'brand': string;
 }

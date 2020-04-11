@@ -1,1 +1,39 @@
-<p>inventory works!</p>
+<form [formGroup]="inventoryForm" class="example-form" >
+    <h2>Add Articles</h2>
+
+  <mat-form-field>
+    <mat-label>Category of Article</mat-label>
+    <mat-select formControlName="categoryArticle" required>
+      <mat-option *ngFor="let category of categories" [value]="category.idCategory">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Reference of Article</mat-label>
+    <input matInput placeholder="Tshir #45" formControlName="referenceArticle" type="text" required>
+  </mat-form-field>
+  <div *ngIf="form.referenceArticle.errors" class="alert alert-danger" role="alert">
+    the reference must be between 7 and 15 characters.
+  </div>
+
+  <mat-form-field>
+    <mat-label>Brand of Article</mat-label>
+    <mat-select formControlName="brandArticle" required>
+      <mat-option *ngFor="let brand of brands" [value]="brand">
+        {{brand}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Price of Article</mat-label>
+    <input matInput placeholder="Ex 40,000" formControlName="priceArticle" type="text" required>
+  </mat-form-field>
+  <div *ngIf="form.priceArticle.errors" class="alert alert-danger" role="alert">
+    the price must be higher than 4 characters
+  </div>
+  <button type="button" [disabled]="!inventoryForm.valid" mat-raised-button color="primary" (click)="onClick()">Open Modal</button>
+</form>

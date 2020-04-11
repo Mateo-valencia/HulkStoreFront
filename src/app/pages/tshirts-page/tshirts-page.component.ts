@@ -22,10 +22,9 @@ export class TshirtsPageComponent implements OnInit {
   }
 
   getArticlesMarvel() {
-    this.articleService.getArticlesListByBrand('Marvel','1')
+    this.articleService.getArticlesListByBrand('Marvel', '1')
     .subscribe(
       (dataMarvel) => {
-        console.log('Marvel', dataMarvel);
         this.articlesMarvel = dataMarvel;
       },
       (err) => {console.log(err); }
@@ -36,7 +35,6 @@ export class TshirtsPageComponent implements OnInit {
     this.articleService.getArticlesListByBrand('DC', '1')
     .subscribe(
       (dataDC) => {
-        console.log('DC', dataDC);
         this.articlesDc = dataDC;
       },
       (err) => {console.log(err); }
@@ -47,7 +45,6 @@ export class TshirtsPageComponent implements OnInit {
     this.articleService.getArticlesListByBrand('Other', '1')
     .subscribe(
       (dataOthers) => {
-        console.log('DC', dataOthers);
         this.articlesOthers = dataOthers;
       },
       (err) => {console.log(err); }
