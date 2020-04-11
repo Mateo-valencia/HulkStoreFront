@@ -2,49 +2,54 @@
 <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar 
-      [ngClass]="brand === 'Marvel' ? 'example-header-image-marvel' 
-      : brand === 'DC' ? 'example-header-image-dc' 
+      [ngClass]="article.brand === 'Marvel' ? 'example-header-image-marvel' 
+      : article.brand === 'DC' ? 'example-header-image-dc' 
       : 'example-header-image-others'">
     </div>
-      <mat-card-title>{{brand}}</mat-card-title>
-      <mat-card-subtitle>Tshirt</mat-card-subtitle>
+      <mat-card-title>{{article.brand}}</mat-card-title>
+      <mat-card-subtitle *ngIf="category === 1">Tshirt</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="category === 2">Glasses</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="category === 3">Comics</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="category === 4">Toys</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="category === 5">Accessories</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="category === 6">Others</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image 
     [src]="category === 1 ? 
-        brand === 'Marvel' ? '../../../assets/TshirtMarvel.jpg':
-        brand === 'DC' ? '../../../assets/TshirtDc.jpg':
+        article.brand === 'Marvel' ? '../../../assets/TshirtMarvel.jpg':
+        article.brand === 'DC' ? '../../../assets/TshirtDc.jpg':
          '../../../assets/TshirtOthers.jpg':
      category === 2 ?
-        brand === 'Marvel' ? '../../../assets/GlassesMarvel.jpg':
-        brand === 'DC' ? '../../../assets/GlassesDc.jpg':
+        article.brand === 'Marvel' ? '../../../assets/GlassesMarvel.jpg':
+        article.brand === 'DC' ? '../../../assets/GlassesDc.jpg':
         '../../../assets/GlassesOthers.jpg' :
      category === 3 ?
-        brand === 'Marvel' ? '../../../assets/ComicsMarvel.jpg':
-        brand === 'DC' ? '../../../assets/ComicsDc.png':
+        article.brand === 'Marvel' ? '../../../assets/ComicsMarvel.jpg':
+        article.brand === 'DC' ? '../../../assets/ComicsDc.png':
         '../../../assets/Others.png':
      category === 4 ?
-        brand === 'Marvel' ? '../../../assets/ToysMarvel.jpg':
-        brand === 'DC' ? '../../../assets/ToysDc.jpg':
+        article.brand === 'Marvel' ? '../../../assets/ToysMarvel.jpg':
+        article.brand === 'DC' ? '../../../assets/ToysDc.jpg':
          '../../../assets/Others.png':
      category === 5 ?
-        brand === 'Marvel' ? '../../../assets/AccessoriesMarvel.jpg':
-        brand === 'DC' ? '../../../assets/AccessoriesDc.jpg':
+        article.brand === 'Marvel' ? '../../../assets/AccessoriesMarvel.jpg':
+        article.brand === 'DC' ? '../../../assets/AccessoriesDc.jpg':
          '../../../assets/Others.png':
      category === 6 ?
-        brand === 'Marvel' ? '../../../assets/Others.png':
-        brand === 'DC' ? '../../../assets/Others.png':
+        article.brand === 'Marvel' ? '../../../assets/Others.png':
+        article.brand === 'DC' ? '../../../assets/Others.png':
          '../../../assets/Others.png':
      'Others.png' "
     alt="Photo of a Shiba Inu" id="image">
     <mat-card-content>
-      <h3>{{reference}}</h3>
+      <h3>{{article.reference}}</h3>
       <p>
-        {{price}}
+        {{article.price}}
       </p>
+      <p>Quantity:{{quantity}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button type="button" mat-raised-button color="primary" (click)="onClick()">Sell</button>
     </mat-card-actions>
 </mat-card>
   

@@ -12,6 +12,8 @@ export class TshirtsPageComponent implements OnInit {
   public articlesMarvel: Article[];
   public articlesDc: Article[];
   public articlesOthers: Article[];
+  prueba: Article[] = [{idArticle: 1 , brand: 'e' , price: 'eefdf', reference: 'ref1', descriptions: []},
+  {idArticle: 2 , brand: 'e' , price: 'eefdf', reference: 'ref2', descriptions: []}];
 
   constructor(private articleService: ArticlesService) { }
 

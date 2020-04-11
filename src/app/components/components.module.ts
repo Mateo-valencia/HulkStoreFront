@@ -11,14 +11,20 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CardComponent } from './card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SellComponent } from './sell/sell.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SellfailComponent } from './sellfail/sellfail.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    SellComponent,
+    SellfailComponent
   ],
+  entryComponents: [SellComponent],
   exports: [
     NavbarComponent,
     CardComponent
@@ -33,7 +39,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     MatCardModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ]
 })
 export class ComponentsModule { }

@@ -8,11 +8,12 @@ import { AccessoriesPageComponent } from './pages/accessories-page/accessories-p
 import { OthersPageComponent } from './pages/others-page/others-page.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 
-
-
 const routes: Routes = [
   { path: 'tshits',
     component: TshirtsPageComponent
+  },
+  { path: 'tshitsc',
+  component: TshirtsPageComponent
   },
   { path: 'glasses',
     component: GlassesPageComponent

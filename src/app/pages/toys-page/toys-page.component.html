@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesMarvel">
-                <app-card [reference]="item.reference" [price]="item.price" [brand]="item.brand" [category]="4"></app-card>
+                <app-card [article]="item" [category]="4"></app-card>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="row">
             <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesDc" >
-                <app-card [reference]="item.reference" [price]="item.price" [brand]="item.brand" [category]="4"></app-card>
+                <app-card [article]="item" [category]="4"></app-card>
             </div> 
         </div>
     </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-3 col-xl-3 col-lg-3 col-sm-3 results" *ngFor="let item of articlesOthers">
-                <app-card [reference]="item.reference" [price]="item.price" [brand]="item.brand" [category]="4"></app-card>
+                <app-card [article]="item" [category]="4"></app-card>
             </div> 
         </div>
     </div>
