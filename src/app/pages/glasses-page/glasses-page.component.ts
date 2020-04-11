@@ -25,7 +25,6 @@ export class GlassesPageComponent implements OnInit {
     this.articleService.getArticlesListByBrand('Marvel','2')
     .subscribe(
       (dataMarvel) => {
-        console.log('Marvel', dataMarvel);
         this.articlesMarvel = dataMarvel;
       },
       (err) => {console.log(err); }
@@ -36,7 +35,6 @@ export class GlassesPageComponent implements OnInit {
     this.articleService.getArticlesListByBrand('DC', '2')
     .subscribe(
       (dataDC) => {
-        console.log('DC', dataDC);
         this.articlesDc = dataDC;
       },
       (err) => {console.log(err); }
@@ -47,7 +45,6 @@ export class GlassesPageComponent implements OnInit {
     this.articleService.getArticlesListByBrand('Other', '2')
     .subscribe(
       (dataOthers) => {
-        console.log('DC', dataOthers);
         this.articlesOthers = dataOthers;
       },
       (err) => {console.log(err); }
